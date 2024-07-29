@@ -1,0 +1,22 @@
+{
+    "name": "gdsd1/minimvc",
+    "description": "Mini MVC",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gdsd1\\Minimvc\\": "src/"
+        }
+    },
+    "scripts": {
+        "dev": "php -S localhost:8080 src/public/index.php"
+    },
+    "authors": [
+        {
+            "name": "Guilherme Daniel",
+            "email": "gui.dani13@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
