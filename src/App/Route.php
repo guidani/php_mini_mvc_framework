@@ -18,12 +18,12 @@ class Route
     return $this->routes;
   }
 
-  public function setRoutes(array $routes)
+  private function setRoutes(array $routes)
   {
     $this->routes = $routes;
   }
 
-  public function initRoutes()
+  private function initRoutes()
   {
     $routes['home'] = array(
       'route' => '/',
