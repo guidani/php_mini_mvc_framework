@@ -1,6 +1,6 @@
 <?php
 
-namespace Gdsd1\Minimvc\App;
+namespace Me\Minimvc\App;
 
 class Route
 {
@@ -15,29 +15,44 @@ class Route
 
   public function getRoutes()
   {
-    return $this->routes;
+    try {
+      return $this->routes;
+    } catch (\Throwable $e) {
+      $e->getMessage();
+      die();
+    }
   }
 
   private function setRoutes(array $routes)
   {
-    $this->routes = $routes;
+    try {
+      $this->routes = $routes;
+    } catch (\Throwable $e) {
+      $e->getMessage();
+      die();
+    }
   }
 
   private function initRoutes()
   {
-    $routes['home'] = array(
-      'route' => '/',
-      'controller' => 'IndexController',
-      'action' => 'index'
-    );
+    try {
+      $routes['home'] = array(
+        'route' => '/',
+        'controller' => 'IndexController',
+        'action' => 'index'
+      );
 
-    $routes['sobre_nos'] = array(
-      'route' => '/sobre_nos',
-      'controller' => 'IndexController',
-      'action' => 'sobreNos'
-    );
+      $routes['sobre_nos'] = array(
+        'route' => '/sobre_nos',
+        'controller' => 'IndexController',
+        'action' => 'sobreNos'
+      );
 
-    $this->setRoutes($routes);
+      $this->setRoutes($routes);
+    } catch (\Throwable $e) {
+      $e->getMessage();
+      die();
+    }
   }
 
   public function run($url)
@@ -45,20 +60,25 @@ class Route
     try {
       foreach ($this->getRoutes() as $key => $route) {
         if ($url == $route['route']) {
-          $class = "Gdsd1\\Minimvc\\App\\Controllers\\" . $route['controller'];
+          $class = "Me\\Minimvc\\App\\Controllers\\" . $route['controller'];
           $controller = new $class;
           $action = $route['action'];
           $controller->$action();
         }
       }
-    } catch (\Throwable $th) {
-      echo $th->getMessage();
+    } catch (\Throwable $e) {
+      echo $e->getMessage();
+      die();
     }
   }
 
   public function getUrl()
   {
-    // echo parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-    return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    try {
+      return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    } catch (\Throwable $e) {
+      $e->getMessage();
+      die();
+    }
   }
 }

@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Gdsd1\\Minimvc\\' => array($baseDir . '/src'),
+    'Me\\Minimvc\\' => array($baseDir . '/src'),
 );

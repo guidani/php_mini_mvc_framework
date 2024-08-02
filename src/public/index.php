@@ -1,6 +1,6 @@
 <?php
 
-use Gdsd1\Minimvc\App\Route;
+use Me\Minimvc\App\Route;
 
 require_once 'vendor/autoload.php';
 

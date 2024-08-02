@@ -1,11 +1,11 @@
 {
-    "name": "gdsd1/minimvc",
+    "name": "me/minimvc",
     "description": "Mini MVC",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Gdsd1\\Minimvc\\": "src/"
+            "Me\\Minimvc\\": "src/"
         }
     },
     "scripts": {
